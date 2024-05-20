@@ -27,8 +27,9 @@ async function main() {
 
     const lista = ['Java', 'Kotlin', 'Android']
 
-    app.get('/personagem', function (req, res) {
-        res.send(lista.filter(Boolean))
+    app.get('/personagem', async function (req, res) {
+        const itens = await collection.find().toArray()
+        res.send(itens)
     })
 
     app.get('/personagem/:id', function (req, res) {
