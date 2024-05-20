@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import express from 'express';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 
 const admSecret = process.env.SECRET_ADM
 const keySecret = process.env.SECRET_KEY
@@ -32,9 +32,9 @@ async function main() {
         res.send(itens)
     })
 
-    app.get('/personagem/:id', function (req, res) {
+    app.get('/personagem/:id', async function (req, res) {
         const id = req.params.id
-        const item = lista[id - 1]
+        const item = await collection.findOne({ _id: new ObjectId(id) })
 
         if (!item) {
             return res.status(404).send('Item não encontrado.')
