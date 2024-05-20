@@ -1,7 +1,7 @@
 {
   "name": "missao-aprendizado-crud-em-memoria-mongodb-intro-e-implementacao",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto da Missão de Aprendizado da profissão Dev Backend JavaScript, nível Iniciante: MongoDB: Intro, Implementação e Deploy e Segurança",
   "main": "index.js",
   "type": "module",
   "scripts": {
